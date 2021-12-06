@@ -44,35 +44,6 @@ class MatrixSystem:
             x=2.0*(random.random()-0.5)
             y=2.0*(random.random()-0.5)
             self.b0[j] = np.complex(x,y)
-        
-        #HERE
-        #self.A0[0][0]=-2.0
-        #self.A0[0][1]= 1.0
-        #self.A0[1][0]= 1.0
-        #self.A0[1][1]=-2.0
-        #self.b0[0]=0.0
-        #self.b0[1]=1.0
-        #self.bnorm=math.sqrt(sum([np.absolute(x)*np.absolute(x) for x in self.b0]))
-        #for j in range(self.M):
-            #self.b0[j]=self.b0[j]/self.bnorm
-        
-        #l=2.0/float(self.M)
-        #p=[]
-        #for j in range(self.M):
-            #if(j<self.M/2):
-                #self.b0[j]=1.0
-                #p.append([-0.5,l*j-0.5])
-            #else:
-                #p.append([0.5,l*(j-self.M/2)-0.5])
-                #self.b0[j]=0.0
-            #print(p[j])
-        #
-        #for j in range(self.M):
-            #for k in range(self.M):
-                #if(j==k):
-                    #self.A0[j][k]=-l/(1.0)*(math.log(l)-1.5)
-                #else:
-                    #self.A0[j][k]=-l/(1.0)*math.log(math.sqrt((p[j][0]-p[k][0])**2.0+(p[j][1]-p[k][1])**2.0))
     
     def PrepSystem(self):
         
@@ -126,15 +97,6 @@ class MatrixSystem:
                 if(self.ap<np.absolute(self.A[j][k])):
                     self.ap=np.absolute(self.A[j][k])
         self.X=np.absolute(float(self.N)*self.ap+EPSILON)
-        
-        #HERE
-        #print(self.X,self.d)
-        #print()
-        print(self.A0)
-        print()
-        print(self.b0)
-        print()
-        #print(self.A)
     
     def CompareClassical(self,sol):
         A0inv=np.linalg.inv(self.A0)
