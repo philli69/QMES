@@ -1,3 +1,8 @@
+# This was an early test of the HHL algorithm.
+# It is in no way efficient, and doesn't use any of the quantum walk concepts.
+# It's quite rough, and might not work correctly.
+# I've added it only for reference.
+
 import sys
 import math
 import numpy as np
